@@ -14,7 +14,12 @@ function flipCard() {
     hasFlippedCard = false;
     secondCard = this;
 
+    checkForMatch();
     //do cards match?
+    
+}
+
+function checkForMatch(){
     if (firstCard.dataset.framework === secondCard.dataset.framework){
         //if it matches
         firstCard.removeEventListener('click', flipCard);
@@ -27,4 +32,5 @@ function flipCard() {
     }, 1500);}
   }
 }
+
 cards.forEach(card => card.addEventListener("click", flipCard));
