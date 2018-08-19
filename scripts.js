@@ -51,4 +51,12 @@ function resetBoard() {
   secondCard = null;
 }
 
+//IIFE
+(function shuffle() {
+    cards.forEach(card => {
+      let ramdomPos = Math.floor(Math.random() * 12);
+      card.style.order = ramdomPos;
+    });
+  })();
+
 cards.forEach(card => card.addEventListener("click", flipCard));
